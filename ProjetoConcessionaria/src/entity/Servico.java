@@ -5,18 +5,37 @@ import java.util.Scanner;
 
 public class Servico {
 
-	private String data;
+	private String dia;
 	private int custo;
 	private int numServico;
-	private Automovel Auto;
-	private Mecanico Mec;
-	private Cliente Clien;
+	private Automovel Automovel;
+	private Mecanico Mecanico;
+	private Cliente Cliente;
 	
-	public String getData() {
-		return data;
+	
+	public Automovel getAutomovel() {
+		return Automovel;
 	}
-	public void setData(String data) {
-		this.data = data;
+	public void setAutomovel(Automovel automovel) {
+		Automovel = automovel;
+	}
+	public Mecanico getMecanico() {
+		return Mecanico;
+	}
+	public void setMecanico(Mecanico mecanico) {
+		Mecanico = mecanico;
+	}
+	public Cliente getCliente() {
+		return Cliente;
+	}
+	public void setCliente(Cliente cliente) {
+		Cliente = cliente;
+	}
+	public String getDia() {
+		return dia;
+	}
+	public void setDia(String dia) {
+		this.dia = dia;
 	}
 	public int getCusto() {
 		return custo;
@@ -29,24 +48,6 @@ public class Servico {
 	}
 	public void setNumServico(int numServico) {
 		this.numServico = numServico;
-	}
-	public Automovel getAuto() {
-		return Auto;
-	}
-	public void setAuto(Automovel auto) {
-		Auto = auto;
-	}
-	public Mecanico getMec() {
-		return Mec;
-	}
-	public void setMec(Mecanico mec) {
-		Mec = mec;
-	}
-	public Cliente getClien() {
-		return Clien;
-	}
-	public void setClien(Cliente clien) {
-		Clien = clien;
 	}
 	
 	

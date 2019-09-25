@@ -5,18 +5,37 @@ import java.util.Scanner;
 
 public class Venda {
 
-	private String data;
+	private String dia;
 	private int valor;
 	private int numVenda;
-	private Automovel Auto;
-	private Vendedor Vend;
-	private Cliente Clien;
+	private Automovel Automovel;
+	private Vendedor Vendedor;
+	private Cliente Cliente;
 	
-	public String getData() {
-		return data;
+	
+	public Automovel getAutomovel() {
+		return Automovel;
 	}
-	public void setData(String data) {
-		this.data = data;
+	public void setAutomovel(Automovel automovel) {
+		Automovel = automovel;
+	}
+	public Vendedor getVendedor() {
+		return Vendedor;
+	}
+	public void setVendedor(Vendedor vendedor) {
+		Vendedor = vendedor;
+	}
+	public Cliente getCliente() {
+		return Cliente;
+	}
+	public void setCliente(Cliente cliente) {
+		Cliente = cliente;
+	}
+	public String getDia() {
+		return dia;
+	}
+	public void setDia(String dia) {
+		this.dia = dia;
 	}
 	public int getValor() {
 		return valor;
@@ -29,24 +48,6 @@ public class Venda {
 	}
 	public void setNumVenda(int numVenda) {
 		this.numVenda = numVenda;
-	}
-	public Automovel getAuto() {
-		return Auto;
-	}
-	public void setAuto(Automovel auto) {
-		Auto = auto;
-	}
-	public Vendedor getVend() {
-		return Vend;
-	}
-	public void setVend(Vendedor vend) {
-		Vend = vend;
-	}
-	public Cliente getClien() {
-		return Clien;
-	}
-	public void setClien(Cliente clien) {
-		Clien = clien;
 	}
 	
 

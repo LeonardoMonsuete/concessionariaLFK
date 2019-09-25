@@ -19,7 +19,7 @@ public class AutomovelDAO {
 			Connection con = AppConnection.getConnection();
 			Statement stmt = con.createStatement();
 			  ResultSet rs = stmt.executeQuery(
-			          "SELECT codigo, modelo, ano, cilindrada, tipo FROM Automovel");
+			          "SELECT codigo, modelo, ano, cilindrada, tipo FROM Automovel where codigo NOT IN (select codigo_Automovel from Venda)");
 			  while (rs.next()) {
 				  Automovel a = new Automovel();
 				  a.setCodigo(rs.getInt("codigo"));
@@ -43,7 +43,7 @@ public class AutomovelDAO {
 		try {
 			Connection con = AppConnection.getConnection();
 			PreparedStatement stmt = con.prepareStatement(
-					"SELECT codigo, modelo, ano, cilindrada, tipo FROM Automovel where codigo = ?");
+					"SELECT codigo, modelo, ano, cilindrada, tipo FROM Automovel where codigo = ? and codigo NOT IN (select codigo_Automovel from Venda)");
 			stmt.setInt(1, codigo);
 			  ResultSet rs = stmt.executeQuery();
 			  while (rs.next()) {
@@ -90,7 +90,7 @@ public class AutomovelDAO {
 	
 	public Automovel atualizar(Automovel automovel) throws Exception {
 		String sqlInsert =
-			"UPDATE Pessoa SET modelo = ?, ano = ?, cilindrada = ? where codigo = ?";
+			"UPDATE Automovel SET modelo = ?, ano = ?, cilindrada = ? , tipo = ? where codigo = ?";
 		valida(automovel, false);
 		try {
 			Connection con = AppConnection.getConnection();
@@ -98,7 +98,8 @@ public class AutomovelDAO {
 			ps.setString(1, automovel.getModelo());
 			ps.setInt(2, automovel.getAno());
 			ps.setInt(3, automovel.getCilindrada());
-			ps.setInt(4, automovel.getCodigo());
+			ps.setInt(4, automovel.getTipo());
+			ps.setInt(5, automovel.getCodigo());
 			int ret = ps.executeUpdate();
 			if (ret != 1) {
 				throw new Exception("Valor não foi alterado por erro de banco."); 

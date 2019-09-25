@@ -53,7 +53,7 @@ public class ServicoDAO {
 		try {
 			Connection con = AppConnection.getConnection();
 			PreparedStatement stmt = con.prepareStatement(
-					"SELECT numServico, numRegistro_Mecanico, codigo_Cliente, codigo_Automovel, dia, custo FROM Mecanico where numServico = ?");
+					"SELECT numServico, numRegistro_Mecanico, codigo_Cliente, codigo_Automovel, dia, custo FROM Servico where numServico = ?");
 			stmt.setInt(1, numServico);
 			  ResultSet rs = stmt.executeQuery();
 			  while (rs.next()) {

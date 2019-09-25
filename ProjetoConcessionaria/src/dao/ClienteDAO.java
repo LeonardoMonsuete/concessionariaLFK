@@ -89,7 +89,7 @@ public class ClienteDAO {
 	
 	public Cliente atualizar(Cliente cliente) throws Exception {
 		String sqlInsert =
-			"UPDATE Pessoa SET nome = ?, datanasc = ?, cpf = ?, rg = ? where codigo = ?";
+			"UPDATE Cliente SET nome = ?, datanasc = ?, cpf = ?, rg = ? where codigo = ?";
 		valida(cliente, false);
 		try {
 			Connection con = AppConnection.getConnection();

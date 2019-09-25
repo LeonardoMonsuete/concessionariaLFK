@@ -3,13 +3,24 @@ package entity;
 public class Automovel {
 	
 	private int codigo;
-	private String nome;
-	private String ano;
+	private String modelo;
+	private int ano;
 	private int cilindrada;
-	private int numPortas;
-	private int cavalos;
+	private int tipo;
 	
 	
+	public String getModelo() {
+		return modelo;
+	}
+	public void setModelo(String modelo) {
+		this.modelo = modelo;
+	}
+	public int getTipo() {
+		return tipo;
+	}
+	public void setTipo(int tipo) {
+		this.tipo = tipo;
+	}
 	public int getCodigo() {
 		return codigo;
 	}
@@ -17,16 +28,12 @@ public class Automovel {
 		this.codigo = codigo;
 	}
 	
-	public String getNome() {
-		return nome;
-	}
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-	public String getAno() {
+	
+	
+	public int getAno() {
 		return ano;
 	}
-	public void setAno(String ano) {
+	public void setAno(int ano) {
 		this.ano = ano;
 	}
 	public int getCilindrada() {
@@ -35,17 +42,6 @@ public class Automovel {
 	public void setCilindrada(int cilindrada) {
 		this.cilindrada = cilindrada;
 	}
-	public int getNumPortas() {
-		return numPortas;
-	}
-	public void setNumPortas(int numPortas) {
-		this.numPortas = numPortas;
-	}
-	public int getCavalos() {
-		return cavalos;
-	}
-	public void setCavalos(int cavalos) {
-		this.cavalos = cavalos;
-	}
+
 	
 }

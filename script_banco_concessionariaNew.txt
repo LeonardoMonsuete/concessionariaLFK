@@ -1,0 +1,83 @@
+create table Automovel (
+ codigo integer auto_increment
+ modelo varchar(100),
+fabricante varchar(100),
+ano integer,
+cilindrada integer,
+preco integer,
+tipo integer
+);
+
+create table Cliente (
+ codigo integer,
+ nome varchar(100),
+datanasc varchar(100),
+cpf varchar(100),
+rg varchar(100)
+);
+
+create table Mecanico (
+ numRegistro integer,
+ nome varchar(100),
+datanasc varchar(100),
+cpf varchar(100),
+rg varchar(100),
+salario integer
+);
+
+create table Vendedor (
+ numRegistro integer,
+ nome varchar(100),
+datanasc varchar(100),
+cpf varchar(100),
+rg varchar(100),
+salario integer
+);
+
+create table Servico (
+ numServico integer,
+ numRegistro_Mecanico integer,
+ codigo_Cliente integer,
+ codigo_Automovel integer,
+ dia varchar(100),
+ custo integer
+);
+
+create table Venda (
+ numVenda integer,
+ numRegistro_Vendedor integer,
+ codigo_Cliente integer,
+ codigo_Automovel integer,
+ dia varchar(100),
+ valor integer
+);
+
+alter table Automovel add constraint PK_automovel primary key (codigo);
+
+alter table Cliente add constraint PK_Cliente primary key (codigo);
+
+alter table Mecanico add constraint PK_Mecanico primary key (numRegistro);
+
+alter table Vendedor add constraint PK_Vendedor primary key (numRegistro);
+
+alter table Servico add constraint PK_Servico primary key (numServico, numRegistro_Mecanico, codigo_Cliente, codigo_Automovel);
+
+alter table Venda add constraint PK_Venda primary key (numVenda, numRegistro_Vendedor, codigo_Cliente, codigo_Automovel);
+
+alter table Servico add constraint FK_Servico_Mecanico foreign key
+(numRegistro_Mecanico) references Mecanico(numRegistro); 
+
+alter table Servico add constraint FK_Servico_Automovel foreign key
+(codigo_Automovel) references Automovel(codigo);
+
+alter table Servico add constraint FK_Servico_Cliente foreign key
+(codigo_Cliente) references Cliente(codigo); 
+
+alter table Venda add constraint FK_Venda_Vendedor foreign key
+(numRegistro_Vendedor) references Vendedor(numRegistro); 
+
+alter table Venda add constraint FK_Venda_Automovel foreign key
+(codigo_Automovel) references Automovel(codigo);
+
+alter table Venda add constraint FK_Venda_Cliente foreign key
+(codigo_Cliente) references Cliente(codigo);

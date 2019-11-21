@@ -1,0 +1,91 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<ui:composition template="templateLFK2.xhtml">
+<ui:define name="title">
+	   Home - Consultar
+</ui:define>
+
+<ui:define name="content">
+	   
+  			<h:form>
+  				<h:dataTable id="automovelDT" value="#{automovelMBean.lista}" 
+		   var="automovel" rowKey="#{automovel.id}"
+           selectionMode="single" selection="#{automovelMBean.selecionado}"
+		   paginator="true" rows="10"  paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+           rowsPerPageTemplate="5,10,15" >
+           
+  				<f:facet name="header">
+               Listagem dos Automoveis Cadastrados
+           		</f:facet>
+  			
+  			<h:column headerText="ID" style="width:25px"  
+			       sortBy="#{automovel.id}"  filterBy="#{automovel.id}">
+			       <f:facet name="header">
+					<h:outputText value="ID" />
+					</f:facet> 
+				<h:outputText value="#{automovel.id}"/>
+			</h:column>
+
+			
+
+ 		    <h:column headerText="Modelo" style="width:70px"
+ 		         sortBy="#{automovel.modelo}"  filterBy="#{automovel.modelo}" filterMatchMode="contains">
+ 		         <f:facet name="header">
+					<h:outputText value="MODELO" />
+					</f:facet> 
+				<h:outputText value="#{automovel.modelo}"/>
+			</h:column>
+			<h:column headerText="Fabricante" style="width:40px"
+ 		         sortBy="#{automovel.fabricante}"  filterBy="#{automovel.fabricante}" filterMatchMode="contains">
+ 		         <f:facet name="header">
+					<h:outputText value="FABRICANTE" />
+					</f:facet> 
+				<h:outputText value="#{automovel.fabricante}"/>
+			</h:column>
+			
+			<h:column headerText="Ano" style="width:100px"  
+			       sortBy="#{automovel.ano}"  filterBy="#{automovel.ano}" filterMatchMode="contains">
+			       <f:facet name="header">
+					<h:outputText value="ANO" />
+					</f:facet> 
+				<h:outputText value="#{automovel.ano}"/>
+			</h:column>
+			
+			<h:column headerText="Tipo" style="width:100px"  
+			       sortBy="#{automovel.tipo}"  filterBy="#{automovel.tipo}" filterMatchMode="contains">
+			       <f:facet name="header">
+					<h:outputText value="TIPO" />
+					</f:facet> 
+				<h:outputText value="#{automovel.tipo}"/>
+			</h:column>
+			
+			<h:column headerText="Preco" style="width:100px"  
+			       sortBy="#{automovel.preco}"  filterBy="#{automovel.preco}" filterMatchMode="contains">
+			       <f:facet name="header">
+					<h:outputText value="PRECO" />
+					</f:facet> 
+				<h:outputText value="#{automovel.preco}"/>
+			</h:column>
+			
+			<h:column headerText="Acoes" style="width:40px">
+ 		         <f:facet name="header">
+					<h:outputText value="AÇÕES" />
+					</f:facet> 
+				<h:commandButton value="Alterar" class="button" action="#{automovelMBean.alterarPage(automovel.id)}" ajax="false" />
+               	<h:commandButton value="Excluir" class="button" actionListener="#{automovelMBean.excluirAction(automovel.id)}" update="automovelDT" />
+			</h:column>
+			
+  				</h:dataTable>
+  			</h:form>
+  			
+		
+</ui:define>
+
+</ui:composition>
+</html>

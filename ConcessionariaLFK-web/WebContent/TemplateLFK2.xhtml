@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<head>
+<title>LFK Concessionaria</title>
+<meta charset="utf-8"></meta>
+<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+
+<!--  CDN Bootstrap-->
+
+
+
+
+<!-- CDN Foundation-->
+<link rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/foundation-sites@6.5.3/dist/css/foundation.min.css" />
+	
+<script
+	src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script
+	src="https://cdn.jsdelivr.net/npm/foundation-sites@6.5.3/dist/js/foundation.min.js"></script>
+
+
+</head>
+
+
+<body>
+
+
+	<!-- Cabeçalho teste usando Foudation -->
+
+	<div id="header">
+		<ui:insert name="header">
+
+
+
+			<ul class="menu dropdown" style="background-color: #000000"
+				data-dropdown-menu="">
+				<li class="menu-text" style="color: #ffffff;">LFK
+					Concessionárias</li>
+					
+				<li><a href="#" style="color: #00FFFF;">Veiculos</a>
+					<ul class="menu" style="background-color: #000000">
+						<li><a href="incluir.xhtml" style="color: #00FFFF;">Incluir</a></li>
+						<li><a href="consultar.xhtml" style="color: #00FFFF;">Consultar</a></li>
+					</ul>
+				</li>
+				<li><a href="#" style="color: #00FFFF;">Cliente</a>
+					<ul class="menu" style="background-color: #000000">
+						<li><a href="incluir.xhtml" style="color: #00FFFF;">Cadastrar</a></li>
+						<li><a href="consultar.xhtml" style="color: #00FFFF;">Consultar</a></li>
+					</ul>
+					</li>
+				<li><a href="#" style="color: #00FFFF;">Serviços</a>
+					<ul class="menu" style="background-color: #000000">
+						<li><a href="incluir.xhtml" style="color: #00FFFF;">Incluir</a></li>
+						<li><a href="consultar.xhtml" style="color: #00FFFF;">Consultar</a></li>
+					</ul>
+				</li>
+				<li><a href="#" style="color: #00FFFF;">Relatórios</a>
+					<ul class="menu" style="background-color: #000000">
+						<li><a href="incluir.xhtml" style="color: #00FFFF;">Compras</a></li>
+						<li><a href="consultar.xhtml" style="color: #00FFFF;">Vendas</a></li>
+						<li><a href="consultar.xhtml" style="color: #00FFFF;">Serviços</a></li>
+					</ul>
+				</li>
+
+			</ul>
+			<script> $(document).foundation();</script>
+		</ui:insert>
+	</div>
+
+
+	<!-- Fim do cabeçalho -->
+
+
+	
+	<div class="grid-x grid-margin-x" style="background-color: #4F4F4F; height: 768px;">
+		
+		<div class="cell small-2" style="background-color: #4F4F4F"></div>
+		<div class="cell large-8">
+			<ui:insert name="content">
+			<br></br>
+			<br></br>
+			<br></br>
+			<br></br>
+			<hr></hr>
+					<h3 style="color: #ffffff;">Olá seja bem-vindo...Escolha uma das opções acima !</h3>				
+			<hr></hr>
+			<br></br>
+			<br></br>
+			</ui:insert>
+		</div>
+	</div>
+	
+
+	<!-- Side Menu usando Bootstrap -->
+	<!--  
+	<div class="container-fluid" style="background-color: #4F4F4F">
+		<div class="row content">
+		
+			<div class="col-sm-2 sidenav">
+				<h4>Menu Veiculos</h4>
+				<ul class="nav nav-pills nav-stacked"
+					style="background-color: #ffffff;">
+					<li><a href="incluir.xhtml">Incluir</a></li>
+					<li><a href="consultar.xhtml">Consultar</a></li>
+
+
+				</ul>
+				<br />
+			</div>
+			 
+			
+			<div class="col-sm-12" style="background-color: #4F4F4F">
+				<h4>
+					<small>Automoveis</small>
+				</h4>
+				<hr />
+
+				<ui:insert name="content">
+
+					<h4>Bem-vindo ! Selecione uma opção ao lado...</h4>
+
+				</ui:insert>
+
+
+			</div>
+			
+			
+		</div>
+	</div>
+ 		-->
+
+	<!--  Area do rodapé da página-->
+	<div id="footer">
+		<ui:insert name="footer"
+			style=" 
+	height: 50px;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    line-height: 50px;
+    color: #ffffff;
+    background-color: #000000;
+    text-align: center;
+    width: 100%;
+    ">
+
+
+			<!-- <footer class="container-fluid">
+				<nav aria-label="You are here:" role="navigation">
+					<ul class="breadcrumbs">
+						<li><a href="#">Home</a></li>
+						<li><a href="#">Facebook</a></li>
+						<li><a href="#">FAQ</a></li>
+						<li  style="color: #ffffff;"><span class="show-for-sr">Current: </span> © All rights
+							reserved</li>
+					</ul>
+				</nav>
+				 -->
+
+			<div
+				style="height: 50px; position: fixed; bottom: 0px; left: 0px; line-height: 50px; color: #00ffff; background-color: #000000; text-align: center; width: 100%;">
+
+				<ul class="breadcrumbs">
+					<li><a href="TemplateLFK2.xhtml" style="color: #00ffff;">Home</a></li>
+					<li><a href="#" style="color: #00ffff;">Facebook</a></li>
+					<li><a href="#" style="color: #00ffff;">FAQ</a></li>
+					<li style="color: #ffffff;"><span class="show-for-sr">Current:
+					</span> © All rights reserved</li>
+				</ul>
+
+			</div>
+
+			<!-- </footer> -->
+
+		</ui:insert>
+	</div>
+
+	<script> $(document).foundation();</script>
+</body>
+</html>

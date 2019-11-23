@@ -13,12 +13,14 @@
 </ui:define>
 
 	<ui:define name="content">
+		<br/>
 	
+		
 		<h:form>
-			<div class="grid-container" style="height: auto;">
+			<div class="grid-container" style="height: auto; background-color: #CDC5BF;">
 				<div class="grix-x">
-					<div class="cell">
-						<h2 style="color: #ffffff;">Incluir Automovel</h2>
+					<div class="cell auto">
+						<h2>Incluir Automovel</h2>
 					</div>
 				</div>
 				<hr />
@@ -30,27 +32,27 @@
 					</div> -->
 					<div class="cell auto">
 
-						<label style="color: #ffffff;">Fabricante 
+						<label>Fabricante 
 						<h:inputText value="#{automovelMBean.novo.fabricante}" />
 						</label> 
 						
-						<label style="color: #ffffff;">Modelo 
+						<label>Modelo 
 						<h:inputText value="#{automovelMBean.novo.modelo}" />
 						</label> 
 
-						<label style="color: #ffffff;">Ano 
+						<label>Ano 
 						<h:inputText value="#{automovelMBean.novo.ano}" type="number"/>
 						</label> 
 						
-						<label style="color: #ffffff;">Cilindrada
+						<label>Cilindrada
 						 <h:inputText value="#{automovelMBean.novo.ano}" type="number"/>
 						</label> 
 						
-						<label style="color: #ffffff;">Preço 
+						<label>Preço 
 						<h:inputText value="#{automovelMBean.novo.ano}" type="number" />
 						</label > 
 						
-						<label style="color: #ffffff;">Tipo 
+						<label>Tipo 
 								<select>
 								<option value="#{automovelMBean.novo.tipo}">Novo</option>
 								<option value="#{automovelMBean.novo.tipo}">Usado</option>

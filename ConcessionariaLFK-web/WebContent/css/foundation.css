@@ -183,7 +183,8 @@ body {
   line-height: 1.5;
   color: #0a0a0a;
   -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale; }
+  -moz-osx-font-smoothing: grayscale; 
+  }
 
 img {
   display: inline-block;

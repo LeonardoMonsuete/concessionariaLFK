@@ -24,20 +24,32 @@
 </head>
 
 
-<body>
+<body >
 
 
 	<!-- Cabeçalho teste usando Foudation -->
 
-	<div id="header">
+	<div id="header" >
 		<ui:insert name="header">
 
 
 
 			<ul class="menu dropdown" style="background-color: #000000"
 				data-dropdown-menu="">
-				<li class="menu-text" style="color: #ffffff;">LFK
-					Concessionárias</li>
+				
+				
+				<li>	
+				<div class="top-bar-right">
+				<img src="css/logo.png" width="35px" height="10px"></img>
+				</div>
+				</li>
+				
+				<li class="menu" style="color: #ffffff;">
+				
+				<a href="index.xhtml" style="color: #ffffff;">LFK Veículos</a>
+					
+					</li>
+					
 					
 				<li><a href="#" style="color: #00FFFF;">Veiculos</a>
 					<ul class="menu" style="background-color: #000000">
@@ -64,8 +76,14 @@
 						<li><a href="consultar.xhtml" style="color: #00FFFF;">Serviços</a></li>
 					</ul>
 				</li>
+				
+
+				
 
 			</ul>
+
+			
+			
 			<script> $(document).foundation();</script>
 		</ui:insert>
 	</div>
@@ -77,7 +95,7 @@
 	
 	<div class="grid-x grid-margin-x" style="background-color: #4F4F4F; height: 768px;">
 		
-		<div class="cell small-2" style="background-color: #4F4F4F"></div>
+		<div class="cell large-2" style="background-color: #4F4F4F"></div>
 		<div class="cell large-8">
 			<ui:insert name="content">
 			<br></br>

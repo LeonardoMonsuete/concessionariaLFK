@@ -1,6 +1,7 @@
 create table Automovel (
- codigo integer,
- modelo varchar(100),
+codigo integer,
+modelo varchar(100),
+fabricante varchar(100),
 ano integer,
 cilindrada integer,
 tipo integer

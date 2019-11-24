@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<ui:composition template="template-lfk.xhtml">
+<ui:define name="title">
+	   Consultar Automovel Novo
+</ui:define>
+
+<ui:define name="content">
+	   
+  			<h:form>
+  				<h:dataTable id="automovelDT" value="#{automovelMBean.listaNovos}" var="carro" rowKey="#{carro.codigo}" 
+  				>
+           
+  				<f:facet name="header">
+               Listagem dos Automoveis Novos
+           		</f:facet>
+  			
+  			<h:column headerText="Codigo" style="width:25px"  
+			       sortBy="#{carro.codigo}"  filterBy="#{carro.codigo}">
+			       <f:facet name="header">
+					<h:outputText value="CODIGO" />
+					</f:facet> 
+				<h:outputText value="#{carro.codigo}"/>
+			</h:column>
+
+			<h:column headerText="Ano" style="width:100px"  
+			       sortBy="#{carro.ano}"  filterBy="#{carro.ano}" filterMatchMode="contains">
+			       <f:facet name="header">
+					<h:outputText value="ANO" />
+					</f:facet> 
+				<h:outputText value="#{carro.ano}"/>
+			</h:column>
+
+ 		    <h:column headerText="Modelo" style="width:70px"
+ 		         sortBy="#{carro.modelo}"  filterBy="#{carro.modelo}" filterMatchMode="contains">
+ 		         <f:facet name="header">
+					<h:outputText value="MODELO" />
+					</f:facet> 
+				<h:outputText value="#{carro.modelo}"/>
+			</h:column>
+			
+			<h:column headerText="Fabricante" style="width:70px"
+ 		         sortBy="#{carro.fabricante}"  filterBy="#{carro.fabricante}" filterMatchMode="contains">
+ 		         <f:facet name="header">
+					<h:outputText value="FABRICANTE" />
+					</f:facet> 
+				<h:outputText value="#{carro.fabricante}"/>
+			</h:column>
+			
+			<h:column headerText="Cilindrada" style="width:40px"
+ 		         sortBy="#{carro.cilindrada}"  filterBy="#{carro.cilindrada}" filterMatchMode="contains">
+ 		         <f:facet name="header">
+					<h:outputText value="CILINDRADA" />
+					</f:facet> 
+				<h:outputText value="#{carro.cilindrada}"/>
+			</h:column>
+			
+			<h:column headerText="Acoes" style="width:40px">
+ 		         <f:facet name="header">
+					<h:outputText value="AÇÕES" />
+					</f:facet> 
+				<h:commandButton value="Alterar" class="button" action="#{automovelMBean.alterarPage(carro.codigo)}" ajax="false" />
+               	<h:commandButton value="Excluir" class="button" actionListener="#{automovelMBean.excluirAction(carro.codigo)}" update="carroDT" />
+			</h:column>
+			
+  				</h:dataTable>
+  			</h:form>
+  			
+		
+</ui:define>
+
+</ui:composition>
+</html>

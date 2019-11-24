@@ -1,0 +1,58 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html">
+<head>
+	<title><ui:insert name="title">Concessionaria LFK</ui:insert></title>
+	<meta charset="utf-8"></meta>
+	<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+	<link rel="shortcut icon" type="image/x-icon" href="#{request.contextPath}/images/favicon.ico"/>
+	<!-- Foundation -->
+	<link rel="stylesheet" href="#{request.contextPath}/css/foundation.css" />
+
+</head>
+
+
+<body>
+
+
+	<div id="header">
+    <ui:insert name="header">
+    	<ui:include src="header.xhtml"/>
+    </ui:insert>
+	</div>
+
+	<div id="content">
+ 
+  
+  	<div class="grid-x grid-padding-x">
+  	<div class="cell medium-6 large-2" style="background: url(#{request.contextPath}/images/slide02.jpg);"></div>
+    <div class="cell medium-6 large-8" style="background-color: #4F4F4F; height: 100vh;">
+  	<ui:insert name="content">
+  	
+  	
+	<!-- Inserir na Pagina -->
+			
+		
+			
+	<!--                     -->	
+		</ui:insert>
+	</div>	
+  	<div class="cell medium-6 large-2" style="background: url(#{request.contextPath}/images/slide02p2.jpg);"></div>
+	</div>
+</div>
+	 
+<div id="footer">
+  <ui:insert name="footer">
+		<ui:include src="footer.xhtml"/>
+  </ui:insert>
+</div>
+	 
+	<script src="#{request.contextPath}/js/jquery.js"></script>
+    <script src="#{request.contextPath}/js/what-input.js"></script>
+    <script src="#{request.contextPath}/js/foundation.min.js"></script>
+	<script> $(document).foundation();</script>
+</body>
+</html>

@@ -10,7 +10,7 @@ Esse é um projeto Java, que usa banco de dados mySQL
 
 Um IDE que aceite Java (Para esse projeto foi usado o Eclipse), e o banco de dados MySQL
 
-### Installing
+### Instalando
 
 Crie um banco de dados no MySQL chamado Concessionaria
 
@@ -28,7 +28,7 @@ altere o 2° e 3° parametro para o seu login e senha do banco de dados
 
 ## Rodando
 
-Feito os passos acima, Execute o programa em seu IDE e irá mostrar o programa no console
+Feito os passos acima, Execute o servidor web local e acesse-o em seu navegador
 
 
 ## Autores

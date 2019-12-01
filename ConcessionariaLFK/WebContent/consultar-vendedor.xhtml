@@ -1,0 +1,87 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<ui:composition template="template-lfk.xhtml">
+<ui:define name="title">
+	   Consultar Funcionários
+</ui:define>
+
+<ui:define name="content">
+	   
+  			<h:form>
+  				<h:dataTable id="vendedorDT" value="#{vendedorMBean.lista}" var="vendedor" rowKey="#{vendedor.numRegistro}" 
+  				>
+           
+  				<f:facet name="header">
+               Listagem de Vendedores Cadastrados
+           		</f:facet>
+  			
+  			<h:column headerText="numRegistro" style="width:10px"  
+			       sortBy="#{vendedor.numRegistro}"  filterBy="#{vendedor.numRegistro}">
+			       <f:facet name="header">
+					<h:outputText value="numRegistro" />
+					</f:facet> 
+				<h:outputText value="#{vendedor.numRegistro}"/>
+			</h:column>
+
+			<h:column headerText="Nome" style="width:100px"  
+			       sortBy="#{vendedor.nome}"  filterBy="#{vendedor.nome}" filterMatchMode="contains">
+			       <f:facet name="header">
+					<h:outputText value="NOME" />
+					</f:facet> 
+				<h:outputText value="#{vendedor.nome}"/>
+			</h:column>
+
+ 		    <h:column headerText="Nascimento" style="width:70px"
+ 		         sortBy="#{vendedor.dataNasc}"  filterBy="#{vendedor.dataNasc}" filterMatchMode="contains">
+ 		         <f:facet name="header">
+					<h:outputText value="NASCIMENTO" />
+					</f:facet> 
+				<h:outputText value="#{vendedor.dataNasc}"/>
+			</h:column>
+			
+			<h:column headerText="Cpf" style="width:90px"
+ 		         sortBy="#{vendedor.cpf}"  filterBy="#{vendedor.cpf}" filterMatchMode="contains">
+ 		         <f:facet name="header">
+					<h:outputText value="CPF" />
+					</f:facet> 
+				<h:outputText value="#{vendedor.cpf}"/>
+			</h:column>
+			
+			<h:column headerText="Rg" style="width:80px"
+ 		         sortBy="#{vendedor.rg}"  filterBy="#{vendedor.rg}" filterMatchMode="contains">
+ 		         <f:facet name="header">
+					<h:outputText value="RG" />
+					</f:facet> 
+				<h:outputText value="#{vendedor.rg}"/>
+			</h:column>
+			
+			<h:column headerText="Salario" style="width:40px"
+ 		         sortBy="#{vendedor.salario}"  filterBy="#{vendedor.salario}" filterMatchMode="contains">
+ 		         <f:facet name="header">
+					<h:outputText value="SALARIO(R$)" />
+					</f:facet> 
+				<h:outputText value="#{vendedor.salario}"/>
+			</h:column>
+			
+			<h:column headerText="Acoes" style="width:15px">
+ 		         <f:facet name="header">
+					<h:outputText value="AÇÕES" />
+					</f:facet> 
+				<h:commandButton value="Alterar" class="button" action="#{vendedorMBean.alterarPage(vendedor.numRegistro)}" ajax="false" />
+               	<h:commandButton value="Excluir" class="button" actionListener="#{vendedorMBean.excluirAction(vendedor.numRegistro)}" update="vendedorDT" />
+			</h:column>
+			
+  				</h:dataTable>
+  			</h:form>
+  			
+		
+</ui:define>
+
+</ui:composition>
+</html>

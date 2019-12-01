@@ -42,7 +42,7 @@ public class ClienteMBean {
 		
 		// Limpar a pessoa selecionada
 		novo = new Cliente();
-		return "consultar.xhtml";
+		return "consultar-cliente.xhtml";
 	}
 
 
@@ -60,7 +60,7 @@ public class ClienteMBean {
 	        return "";
 		}
 		
-		return "atualizar.xhtml";
+		return "atualizar-cliente.xhtml";
 	}
 	
 	public String alterarAction() {
@@ -73,7 +73,7 @@ public class ClienteMBean {
 	        return "";
 		}
 		
-		return "consultar.xhtml";
+		return "consultar-cliente.xhtml";
 	}
 
 	/**
@@ -90,7 +90,7 @@ public class ClienteMBean {
 	                        ex.getMessage(), "Erro ao excluir um Cliente"));
 	        return "";
 		}
-		return "consultar.xhtml";
+		return "consultar-cliente.xhtml";
 	}
 
 	

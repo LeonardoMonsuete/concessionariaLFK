@@ -8,7 +8,7 @@
 
 <ui:composition template="template-lfk.xhtml">
 	<ui:define name="title">
-	   Atualizar Automovel
+	   Cadastrar Funcionários
 </ui:define>
 
 	<ui:define name="content">
@@ -17,44 +17,49 @@
 			<div class="grid-container">
 				<div class="grix-x">
 				<div class="cell">
-				<h2>Atualizar Carro</h2>
+				<h2 style="color: #ffffff;">Cadastrar Mecânico</h2>
 				</div>
 				</div>
 				<hr/>
 				<div class="grid-x grid-padding-x">
 					<!-- <div class="cell auto">
 						<label>Id
-						<h:inputText value="#{carroMBean.selecionado.id}" />
+						<h:inputText value="#{carroMBean.novo.id}" />
 						</label>
 					</div> -->
 					<div class="cell auto">
-						<label>Ano
-						<h:inputText value="#{automovelMBean.selecionado.ano}" />
+						<label>Nome
+						<h:inputText value="#{mecanicoMBean.novo.nome}" />
+						</label>
+					</div>
+					<div class="cell auto">
+						<label>Data Nascimento
+						<h:inputText value="#{mecanicoMBean.novo.dataNasc}" />
+						</label>
+					</div>
+					<div class="cell auto">
+						<label>CPF
+						<h:inputText value="#{mecanicoMBean.novo.cpf}" />
 						</label>
 					</div>
 					
 					<div class="cell auto">
-						<label>Fabricante
-						<h:inputText value="#{automovelMBean.selecionado.fabricante}" />
+						<label>RG
+						<h:inputText value="#{mecanicoMBean.novo.rg}" />
 						</label>
 					</div>
 					
 					<div class="cell auto">
-						<label>Modelo
-						<h:inputText value="#{automovelMBean.selecionado.modelo}" />
+						<label>Salário
+						<h:inputText type="number" value="#{mecanicoMBean.novo.salario}" />
 						</label>
 					</div>
-					
-					<div class="cell auto">
-						<label>Cilindrada
-						<h:inputText value="#{automovelMBean.selecionado.cilindrada}" />
-						</label>
-					</div>
+
 				</div>
 				<div class="grid-x grid-padding-x">
 				<div class="cell">
-				<h:commandButton class="button" value="Atualizar" action="#{automovelMBean.alterarAction()}" />
-				<a class="button"  href="consultar-automovel.xhtml">Cancelar</a>
+				<h:commandButton class="button" value="Incluir" action="#{mecanicoMBean.incluirAction()}" />
+				<a class="button"  href="index.xhtml">Cancelar</a>
 				</div>
 				</div>
 			</div>

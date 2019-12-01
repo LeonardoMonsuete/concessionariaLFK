@@ -60,6 +60,19 @@ public class AutomovelMBean {
 		return "atualizar-automovel.xhtml";
 	}
 	
+	public String venderPage(int codigo) {
+		try {
+			selecionado = dao.getAutomovel(codigo);
+		} catch (Exception ex) {
+			FacesContext facesContext = FacesContext.getCurrentInstance();
+	        facesContext.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,
+	                        ex.getMessage(), "Erro ao Selecionar o Carro"));
+	        return "";
+		}
+		
+		return "vender-automovel.xhtml";
+	}
+	
 	public String alterarAction() {
 		try {
 			dao.atualizar(selecionado);

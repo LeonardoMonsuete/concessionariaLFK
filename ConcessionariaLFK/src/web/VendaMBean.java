@@ -3,10 +3,18 @@ package web;
 import java.util.List;
 
 import javax.faces.application.FacesMessage;
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 import javax.faces.context.FacesContext;
 
+import dao.AutomovelDAO;
 import dao.VendaDAO;
+import entity.Automovel;
 import entity.Venda;
+
+
+@ManagedBean
+@SessionScoped
 
 public class VendaMBean {
 	/** Variáveis acessadas nas páginas. */
@@ -15,10 +23,15 @@ public class VendaMBean {
 	/** Variáveis acessadas nas páginas. */
 	private Venda selecionado;
 	
+	private Automovel autoselecionado;
+	
 	private List<Venda> lista;
+	
+	private List<Automovel> listaauto;
 	
 	private VendaDAO dao = new VendaDAO();
 	
+	private AutomovelDAO daoauto = new AutomovelDAO();
 	
 	
 	
@@ -46,9 +59,9 @@ public class VendaMBean {
 	 * Processamento do Login.
 	 * @return retorna 
 	 */
-	public String alterarPage(int id) {
+	public String venderPage(int codigoauto) {
 		try {
-			selecionado = dao.getVenda(id);
+			autoselecionado = daoauto.getAutomovel(codigoauto);
 		} catch (Exception ex) {
 			FacesContext facesContext = FacesContext.getCurrentInstance();
 	        facesContext.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,
@@ -56,10 +69,11 @@ public class VendaMBean {
 	        return "";
 		}
 		
-		return "atualizar.xhtml";
+		return "vender-automovel.xhtml";
 	}
 	
-	public String alterarAction() {
+
+	/* public String alterarAction() {
 		try {
 			dao.atualizar(selecionado);
 		} catch (Exception ex) {
@@ -69,8 +83,10 @@ public class VendaMBean {
 	        return "";
 		}
 		
-		return "consultar.xhtml";
+		return "vender-automovel.xhtml";
 	}
+	*/
+	
 
 	/**
 	 * Retirar do banco a pessoa selecionada
@@ -83,7 +99,7 @@ public class VendaMBean {
 		} catch (Exception ex) {
 			FacesContext facesContext = FacesContext.getCurrentInstance();
 	        facesContext.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,
-	                        ex.getMessage(), "Erro ao excluir um Venda"));
+	                        ex.getMessage(), "Erro ao excluir uma Venda"));
 	        return "";
 		}
 		return "consultar.xhtml";
@@ -103,6 +119,17 @@ public class VendaMBean {
 		return lista;
 	}
 	
+	public List<Automovel> getListaauto() {
+		try {
+			listaauto = daoauto.listAll();
+		} catch (Exception ex) {
+			FacesContext facesContext = FacesContext.getCurrentInstance();
+	        facesContext.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,
+	                        ex.getMessage(), "Erro ao pegar a Lista de Vendas"));
+		}
+		
+		return listaauto;
+	}
 	
 	
 	

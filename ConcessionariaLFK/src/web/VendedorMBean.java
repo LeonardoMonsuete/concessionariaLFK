@@ -43,7 +43,7 @@ public class VendedorMBean {
 		
 		// Limpar a pessoa selecionada
 		novo = new Vendedor();
-		return "consultar.xhtml";
+		return "consultar-vendedor.xhtml";
 	}
 
 
@@ -61,7 +61,7 @@ public class VendedorMBean {
 	        return "";
 		}
 		
-		return "atualizar.xhtml";
+		return "atualizar-vendedor.xhtml";
 	}
 	
 	public String alterarAction() {
@@ -74,7 +74,7 @@ public class VendedorMBean {
 	        return "";
 		}
 		
-		return "consultar.xhtml";
+		return "consultar-vendedor.xhtml";
 	}
 
 	/**
@@ -91,7 +91,7 @@ public class VendedorMBean {
 	                        ex.getMessage(), "Erro ao excluir um Vendedor"));
 	        return "";
 		}
-		return "consultar.xhtml";
+		return "consultar-vendedor.xhtml";
 	}
 
 	

@@ -17,7 +17,7 @@
 			<div class="grid-container">
 				<div class="grix-x">
 				<div class="cell">
-				<h2>Atualizar Carro</h2>
+				<h2>Realizar Venda</h2>
 				</div>
 				</div>
 				<hr/>
@@ -27,34 +27,58 @@
 						<h:inputText value="#{carroMBean.selecionado.id}" />
 						</label>
 					</div> -->
-					<div class="cell auto">
+					<div class="cell small-6">
 						<label>Ano
 						<h:inputText value="#{automovelMBean.selecionado.ano}" />
 						</label>
 					</div>
 					
-					<div class="cell auto">
+					<div class="cell small-6">
 						<label>Fabricante
 						<h:inputText value="#{automovelMBean.selecionado.fabricante}" />
 						</label>
 					</div>
 					
-					<div class="cell auto">
+					<div class="cell small-6">
 						<label>Modelo
 						<h:inputText value="#{automovelMBean.selecionado.modelo}" />
 						</label>
 					</div>
 					
-					<div class="cell auto">
+					<div class="cell small-6">
 						<label>Cilindrada
 						<h:inputText value="#{automovelMBean.selecionado.cilindrada}" />
 						</label>
 					</div>
+					
+					<div class="cell small-6">
+						<label>Codigo Vendedor
+						<h:inputText value="#{vendaMBean.novo.vendedor}" />
+						</label>
+					</div>
+					
+					<div class="cell small-6">
+						<label>Codigo Cliente
+						<h:inputText value="#{vendaMBean.novo.cliente}" />
+						</label>
+					</div>
+					
+					<div class="cell small-6">
+						<label>Valor venda
+						<h:inputText type="number" value="#{vendaMBean.novo.valor}" />
+						</label>
+					</div>
+					
+					<h:inputHidden value="#{vendaMBean.novo.automovel}" itemValue="#(automovelMBean.selecionado.codigo)"/>
+					
+
+					
+					
 				</div>
 				<div class="grid-x grid-padding-x">
-				<div class="cell">
-				<h:commandButton class="button" value="Atualizar" action="#{automovelMBean.alterarAction()}" />
-				<a class="button"  href="consultar-automovel.xhtml">Cancelar</a>
+				<div class="cell ">
+				<h:commandButton class="button" value="Confirmar" action="#{vendaMBean.incluirAction()}" />
+				<a class="button"  href="index.xhtml">Cancelar</a>
 				</div>
 				</div>
 			</div>

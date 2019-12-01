@@ -66,6 +66,7 @@
 					</f:facet> 
 				<h:commandButton value="Alterar" class="button" action="#{automovelMBean.alterarPage(carro.codigo)}" ajax="false" />
                	<h:commandButton value="Excluir" class="button" actionListener="#{automovelMBean.excluirAction(carro.codigo)}" update="carroDT" />
+               	<h:commandButton value="Vender" class="button" action="vender-automovel.xhtml" ajax="false" />
 			</h:column>
 			
   				</h:dataTable>

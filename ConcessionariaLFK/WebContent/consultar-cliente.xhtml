@@ -1,0 +1,79 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<ui:composition template="template-lfk.xhtml">
+<ui:define name="title">
+	   Consultar Clientes
+</ui:define>
+
+<ui:define name="content">
+	   
+  			<h:form>
+  				<h:dataTable id="clienteDT" value="#{clienteMBean.lista}" var="cliente" rowKey="#{cliente.codigo}" 
+  				>
+           
+  				<f:facet name="header">
+               Listagem de Clientes Cadastrados
+           		</f:facet>
+  			
+  			<h:column headerText="Codigo" style="width:25px"  
+			       sortBy="#{cliente.codigo}"  filterBy="#{cliente.codigo}">
+			       <f:facet name="header">
+					<h:outputText value="CODIGO" />
+					</f:facet> 
+				<h:outputText value="#{cliente.codigo}"/>
+			</h:column>
+
+			<h:column headerText="Nome" style="width:100px"  
+			       sortBy="#{cliente.nome}"  filterBy="#{cliente.nome}" filterMatchMode="contains">
+			       <f:facet name="header">
+					<h:outputText value="NOME" />
+					</f:facet> 
+				<h:outputText value="#{cliente.nome}"/>
+			</h:column>
+
+ 		    <h:column headerText="Nascimento" style="width:70px"
+ 		         sortBy="#{cliente.dataNasc}"  filterBy="#{cliente.dataNasc}" filterMatchMode="contains">
+ 		         <f:facet name="header">
+					<h:outputText value="NASCIMENTO" />
+					</f:facet> 
+				<h:outputText value="#{cliente.dataNasc}"/>
+			</h:column>
+			
+			<h:column headerText="Cpf" style="width:70px"
+ 		         sortBy="#{cliente.cpf}"  filterBy="#{cliente.cpf}" filterMatchMode="contains">
+ 		         <f:facet name="header">
+					<h:outputText value="CPF" />
+					</f:facet> 
+				<h:outputText value="#{cliente.cpf}"/>
+			</h:column>
+			
+			<h:column headerText="Rg" style="width:40px"
+ 		         sortBy="#{cliente.rg}"  filterBy="#{cliente.rg}" filterMatchMode="contains">
+ 		         <f:facet name="header">
+					<h:outputText value="RG" />
+					</f:facet> 
+				<h:outputText value="#{cliente.rg}"/>
+			</h:column>
+			
+			<h:column headerText="Acoes" style="width:40px">
+ 		         <f:facet name="header">
+					<h:outputText value="AÇÕES" />
+					</f:facet> 
+				<h:commandButton value="Alterar" class="button" action="#{clienteMBean.alterarPage(cliente.codigo)}" ajax="false" />
+               	<h:commandButton value="Excluir" class="button" actionListener="#{clienteMBean.excluirAction(cliente.codigo)}" update="clienteDT" />
+			</h:column>
+			
+  				</h:dataTable>
+  			</h:form>
+  			
+		
+</ui:define>
+
+</ui:composition>
+</html>

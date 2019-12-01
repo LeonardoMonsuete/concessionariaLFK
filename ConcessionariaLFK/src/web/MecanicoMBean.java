@@ -43,7 +43,7 @@ public class MecanicoMBean {
 		
 		// Limpar a pessoa selecionada
 		novo = new Mecanico();
-		return "consultar.xhtml";
+		return "consultar-mecanico.xhtml";
 	}
 
 
@@ -61,7 +61,7 @@ public class MecanicoMBean {
 	        return "";
 		}
 		
-		return "atualizar.xhtml";
+		return "atualizar-mecanico.xhtml";
 	}
 	
 	public String alterarAction() {
@@ -74,7 +74,7 @@ public class MecanicoMBean {
 	        return "";
 		}
 		
-		return "consultar.xhtml";
+		return "consultar-mecanico.xhtml";
 	}
 
 	/**
@@ -91,7 +91,7 @@ public class MecanicoMBean {
 	                        ex.getMessage(), "Erro ao excluir um Mecanico"));
 	        return "";
 		}
-		return "consultar.xhtml";
+		return "consultar-mecanico.xhtml";
 	}
 
 	

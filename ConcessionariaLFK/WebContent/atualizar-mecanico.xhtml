@@ -8,7 +8,7 @@
 
 <ui:composition template="template-lfk.xhtml">
 	<ui:define name="title">
-	   Atualizar Automovel
+	   Atualizar Funcionário
 </ui:define>
 
 	<ui:define name="content">
@@ -17,7 +17,7 @@
 			<div class="grid-container">
 				<div class="grix-x">
 				<div class="cell">
-				<h2>Atualizar Carro</h2>
+				<h2>Atualizar Cadastro Mecânico</h2>
 				</div>
 				</div>
 				<hr/>
@@ -28,33 +28,40 @@
 						</label>
 					</div> -->
 					<div class="cell auto">
-						<label>Ano
-						<h:inputText value="#{automovelMBean.selecionado.ano}" />
+						<label>Nome
+						<h:inputText value="#{mecanicoMBean.selecionado.nome}" />
 						</label>
 					</div>
 					
 					<div class="cell auto">
-						<label>Fabricante
-						<h:inputText value="#{automovelMBean.selecionado.fabricante}" />
+						<label>Data Nascimento
+						<h:inputText value="#{mecanicoMBean.selecionado.dataNasc}" />
 						</label>
 					</div>
 					
 					<div class="cell auto">
-						<label>Modelo
-						<h:inputText value="#{automovelMBean.selecionado.modelo}" />
+						<label>CPF
+						<h:inputText value="#{mecanicoMBean.selecionado.cpf}" />
 						</label>
 					</div>
 					
 					<div class="cell auto">
-						<label>Cilindrada
-						<h:inputText value="#{automovelMBean.selecionado.cilindrada}" />
+						<label>RG
+						<h:inputText value="#{mecanicoMBean.selecionado.rg}" />
 						</label>
 					</div>
+					
+					<div class="cell auto">
+						<label>Salário
+						<h:inputText value="#{mecanicoMBean.selecionado.salario}" />
+						</label>
+					</div>
+					
 				</div>
 				<div class="grid-x grid-padding-x">
 				<div class="cell">
-				<h:commandButton class="button" value="Atualizar" action="#{automovelMBean.alterarAction()}" />
-				<a class="button"  href="consultar-automovel.xhtml">Cancelar</a>
+				<h:commandButton class="button" value="Atualizar" action="#{mecanicoMBean.alterarAction()}" />
+				<a class="button"  href="consultar-mecanico.xhtml">Cancelar</a>
 				</div>
 				</div>
 			</div>

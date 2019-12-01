@@ -8,7 +8,7 @@
 
 <ui:composition template="template-lfk.xhtml">
 	<ui:define name="title">
-	   Atualizar Automovel
+	   Atualizar Cliente
 </ui:define>
 
 	<ui:define name="content">
@@ -17,7 +17,7 @@
 			<div class="grid-container">
 				<div class="grix-x">
 				<div class="cell">
-				<h2>Atualizar Carro</h2>
+				<h2>Atualizar Cadastro Cliente</h2>
 				</div>
 				</div>
 				<hr/>
@@ -28,33 +28,34 @@
 						</label>
 					</div> -->
 					<div class="cell auto">
-						<label>Ano
-						<h:inputText value="#{automovelMBean.selecionado.ano}" />
+						<label>Nome
+						<h:inputText value="#{clienteMBean.selecionado.nome}" />
 						</label>
 					</div>
 					
 					<div class="cell auto">
-						<label>Fabricante
-						<h:inputText value="#{automovelMBean.selecionado.fabricante}" />
+						<label>Data Nascimento
+						<h:inputText value="#{clienteMBean.selecionado.dataNasc}" />
 						</label>
 					</div>
 					
 					<div class="cell auto">
-						<label>Modelo
-						<h:inputText value="#{automovelMBean.selecionado.modelo}" />
+						<label>CPF
+						<h:inputText value="#{clienteMBean.selecionado.cpf}" />
 						</label>
 					</div>
 					
 					<div class="cell auto">
-						<label>Cilindrada
-						<h:inputText value="#{automovelMBean.selecionado.cilindrada}" />
+						<label>RG
+						<h:inputText value="#{clienteMBean.selecionado.rg}" />
 						</label>
 					</div>
+					
 				</div>
 				<div class="grid-x grid-padding-x">
 				<div class="cell">
-				<h:commandButton class="button" value="Atualizar" action="#{automovelMBean.alterarAction()}" />
-				<a class="button"  href="consultar-automovel.xhtml">Cancelar</a>
+				<h:commandButton class="button" value="Atualizar" action="#{clienteMBean.alterarAction()}" />
+				<a class="button"  href="consultar-cliente.xhtml">Cancelar</a>
 				</div>
 				</div>
 			</div>

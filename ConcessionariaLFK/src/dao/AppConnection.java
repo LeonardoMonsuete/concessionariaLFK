@@ -17,7 +17,7 @@ public class AppConnection {
 			try {
 				Class.forName("com.mysql.jdbc.Driver");
 				  con = DriverManager.getConnection
-				    ("jdbc:mysql://localhost:3306/concessionarialfk", "aluno", "aluno");
+				    ("jdbc:mysql://localhost:3306/concessionaria", "aluno", "aluno");
 			} catch (Exception ex) {
 				System.err.print("Erro na conexão:" + ex.getLocalizedMessage());
 				throw ex;

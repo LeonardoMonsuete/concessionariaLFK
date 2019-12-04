@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<ui:composition template="template-lfk.xhtml">
+<ui:define name="title">
+	   Relatorio Vendas
+</ui:define>
+
+<ui:define name="content">
+	   
+  			<h:form>
+  				<h:dataTable id="vendasDT" value="#{vendaMBean.lista}" var="venda" rowKey="#{venda.numVenda}" 
+  				>
+           
+  				<f:facet name="header">
+               Relatório de Vendas
+           		</f:facet>
+  			
+  			<h:column headerText="numVenda" style="width:25px"  
+			       sortBy="#{venda.numVenda}"  filterBy="#{venda.numVenda}">
+			       <f:facet name="header">
+					<h:outputText value="Num Venda" />
+					</f:facet> 
+				<h:outputText value="#{venda.numVenda}"/>
+			</h:column>
+
+			<h:column headerText="Vendedor" style="width:100px"  
+			       sortBy="#{venda.vendedor.nome}"  filterBy="#{venda.vendedor.nome}" filterMatchMode="contains">
+			       <f:facet name="header">
+					<h:outputText value="Vendedor" />
+					</f:facet> 
+				<h:outputText value="#{venda.vendedor.nome}"/>
+			</h:column>
+
+ 		    <h:column headerText="Cliente" style="width:70px"
+ 		         sortBy="#{venda.cliente.nome}"  filterBy="#{venda.cliente.nome}" filterMatchMode="contains">
+ 		         <f:facet name="header">
+					<h:outputText value="Cliente" />
+					</f:facet> 
+				<h:outputText value="#{venda.cliente.nome}"/>
+			</h:column>
+			
+			<h:column headerText="Automovel" style="width:70px"
+ 		         sortBy="#{venda.automovel.modelo}"  filterBy="#{venda.automovel.modelo}" filterMatchMode="contains">
+ 		         <f:facet name="header">
+					<h:outputText value="Automovel" />
+					</f:facet> 
+				<h:outputText value="#{venda.automovel.modelo}"/>
+			</h:column>
+			
+			<h:column headerText="Dia" style="width:40px"
+ 		         sortBy="#{venda.dia}"  filterBy="#{venda.dia}" filterMatchMode="contains">
+ 		         <f:facet name="header">
+					<h:outputText value="Dia" />
+					</f:facet> 
+				<h:outputText value="#{venda.dia}"/>
+			</h:column>
+			
+			<h:column headerText="Valor" style="width:40px"
+ 		         sortBy="#{venda.valor}"  filterBy="#{venda.valor}" filterMatchMode="contains">
+ 		         <f:facet name="header">
+					<h:outputText value="Valor" />
+					</f:facet> 
+				<h:outputText value="#{venda.valor}"/>
+			</h:column>
+			
+			<h:column headerText="Acoes" style="width:40px">
+ 		         <f:facet name="header">
+					<h:outputText value="AÇÕES" />
+					</f:facet> 
+               	<h:commandButton value="Excluir" class="button" actionListener="#{vendaMBean.excluirAction(venda.numVenda)}" update="vendasDT" />
+			</h:column>
+			
+  				</h:dataTable>
+  			</h:form>
+  			
+		
+</ui:define>
+
+</ui:composition>
+</html>

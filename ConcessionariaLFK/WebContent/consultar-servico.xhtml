@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<ui:composition template="template-lfk.xhtml">
+<ui:define name="title">
+	   Relatorio de Serviços
+</ui:define>
+
+<ui:define name="content">
+	   
+  			<h:form>
+  				<h:dataTable id="servicosDT" value="#{servicoMBean.lista}" var="servico" rowKey="#{servico.numServico}" 
+  				>
+           
+  				<f:facet name="header">
+               Relatório de Serviços
+           		</f:facet>
+  			
+  			<h:column headerText="numServico" style="width:25px"  
+			       sortBy="#{servico.numServico}"  filterBy="#{servico.numServico}">
+			       <f:facet name="header">
+					<h:outputText value="Num Servico" />
+					</f:facet> 
+				<h:outputText value="#{servico.numServico}"/>
+			</h:column>
+
+			<h:column headerText="Mecanico" style="width:100px"  
+			       sortBy="#{servico.mecanico.nome}"  filterBy="#{servico.mecanico.nome}" filterMatchMode="contains">
+			       <f:facet name="header">
+					<h:outputText value="Mecanico" />
+					</f:facet> 
+				<h:outputText value="#{servico.mecanico.nome}"/>
+			</h:column>
+
+ 		    <h:column headerText="Cliente" style="width:70px"
+ 		         sortBy="#{servico.cliente.nome}"  filterBy="#{servico.cliente.nome}" filterMatchMode="contains">
+ 		         <f:facet name="header">
+					<h:outputText value="Cliente" />
+					</f:facet> 
+				<h:outputText value="#{servico.cliente.nome}"/>
+			</h:column>
+			
+			<h:column headerText="Automovel" style="width:70px"
+ 		         sortBy="#{servico.automovel.modelo}"  filterBy="#{servico.automovel.modelo}" filterMatchMode="contains">
+ 		         <f:facet name="header">
+					<h:outputText value="Automovel" />
+					</f:facet> 
+				<h:outputText value="#{servico.automovel.modelo}"/>
+			</h:column>
+			
+			<h:column headerText="Dia" style="width:40px"
+ 		         sortBy="#{servico.dia}"  filterBy="#{servico.dia}" filterMatchMode="contains">
+ 		         <f:facet name="header">
+					<h:outputText value="Dia" />
+					</f:facet> 
+				<h:outputText value="#{servico.dia}"/>
+			</h:column>
+			
+			<h:column headerText="Custo" style="width:40px"
+ 		         sortBy="#{servico.custo}"  filterBy="#{servico.custo}" filterMatchMode="contains">
+ 		         <f:facet name="header">
+					<h:outputText value="Valor" />
+					</f:facet> 
+				<h:outputText value="#{servico.custo}"/>
+			</h:column>
+			
+			<h:column headerText="Acoes" style="width:40px">
+ 		         <f:facet name="header">
+					<h:outputText value="AÇÕES" />
+					</f:facet> 
+               	<h:commandButton value="Excluir" class="button" actionListener="#{servicoMBean.excluirAction(servico.numServico)}" update="servicosDT" />
+			</h:column>
+			
+  				</h:dataTable>
+  			</h:form>
+  			
+		
+</ui:define>
+
+</ui:composition>
+</html>

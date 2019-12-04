@@ -44,6 +44,26 @@ public class AutomovelMBean {
 			return "consultar-automovel-usado.xhtml";
 		}
 	}
+	
+	public String incluirCompraAction() {
+		try {
+			novo.setTipo(2);
+			dao.inserir(novo);
+		} catch (Exception ex) {
+			FacesContext facesContext = FacesContext.getCurrentInstance();
+	        facesContext.addMessage(null, new FacesMessage(FacesMessage.SEVERITY_ERROR,
+	                        ex.getMessage(), "Erro ao Incluir um Carro"));
+	        return "";
+		}
+		
+		if(novo.getTipo() == 1) {
+			novo = new Automovel();
+			return "consultar-automovel-novo.xhtml";
+		} else {
+			novo = new Automovel();
+			return "consultar-automovel-usado.xhtml";
+		}
+	}
 
 
 

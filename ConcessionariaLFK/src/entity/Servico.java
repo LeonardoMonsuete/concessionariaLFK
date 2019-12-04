@@ -8,9 +8,9 @@ public class Servico {
 	private String dia;
 	private int custo;
 	private int numServico;
-	private Automovel Automovel;
-	private Mecanico Mecanico;
-	private Cliente Cliente;
+	private Automovel Automovel = new Automovel();
+	private Mecanico Mecanico = new Mecanico();
+	private Cliente Cliente = new Cliente();
 	
 	
 	public Automovel getAutomovel() {

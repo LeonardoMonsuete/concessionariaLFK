@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<ui:composition template="template-lfk.xhtml">
+	<ui:define name="title">
+	   Comprar Automovel
+</ui:define>
+
+	<ui:define name="content">
+
+		<h:form>
+			<div class="grid-container">
+				<div class="grix-x">
+				<div class="cell">
+				<h2 style="color: #ffffff;">Comprar Automovel</h2>
+				</div>
+				</div>
+				<hr/>
+				<div class="grid-x grid-padding-x">
+					<!-- <div class="cell auto">
+						<label>Id
+						<h:inputText value="#{carroMBean.novo.id}" />
+						</label>
+					</div> -->
+					<div class="cell auto">
+						<label>Ano
+						<h:inputText  type="number" value="#{automovelMBean.novo.ano}" />
+						</label>
+					</div>
+					<div class="cell auto">
+						<label>Fabricante
+						<h:inputText value="#{automovelMBean.novo.fabricante}" />
+						</label>
+					</div>
+					<div class="cell auto">
+						<label>Modelo
+						<h:inputText value="#{automovelMBean.novo.modelo}" />
+						</label>
+					</div>
+					
+					<div class="cell auto">
+						<label>Cilindrada
+						<h:inputText type="number" value="#{automovelMBean.novo.cilindrada}" />
+						</label>
+					</div>	
+				</div>
+				<div class="grid-x grid-padding-x">
+				<div class="cell">
+				<h:commandButton class="button" value="Incluir" action="#{automovelMBean.incluirCompraAction()}" />
+				<a class="button"  href="index.xhtml">Cancelar</a>
+				</div>
+				</div>
+			</div>
+
+		</h:form>
+
+
+	</ui:define>
+
+</ui:composition>
+</html>

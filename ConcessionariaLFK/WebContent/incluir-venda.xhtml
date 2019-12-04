@@ -1,0 +1,78 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+<ui:composition template="template-lfk.xhtml">
+	<ui:define name="title">
+	   Incluir Venda
+</ui:define>
+
+	<ui:define name="content">
+
+		<h:form>
+			<div class="grid-container">
+				<div class="grix-x">
+				<div class="cell">
+				<h2 style="color: #ffffff;">Incluir Venda</h2>
+				</div>
+				</div>
+				<hr/>
+				<div class="grid-x grid-padding-x">
+					<!-- <div class="cell auto">
+						<label>Id
+						<h:inputText value="#{carroMBean.novo.id}" />
+						</label>
+					</div> -->
+					<div class="cell auto">
+						<label>Vendedor
+						<h:selectOneMenu value = "#{vendaMBean.novo.vendedor.numRegistro}"> 
+   							<f:selectItems value="#{vendaMBean.getListavendedor()}" var="vendedor" itemValue="#{vendedor.numRegistro}" itemLabel="#{vendedor.nome}"/>
+						</h:selectOneMenu> 	
+						</label>
+					</div>
+					<div class="cell auto">
+						<label>Cliente
+						<h:selectOneMenu value = "#{vendaMBean.novo.cliente.codigo}"> 
+   						<f:selectItems value="#{vendaMBean.getListacliente()}" var="cliente" itemValue="#{cliente.codigo}" itemLabel="#{cliente.nome}"/>
+						</h:selectOneMenu> 	
+						</label>
+					</div>
+					<div class="cell auto">
+						<label>Automovel
+						<h:selectOneMenu value = "#{vendaMBean.novo.automovel.codigo}"> 
+   						<f:selectItems value="#{vendaMBean.getListaautomovel()}" var="automovel" itemValue="#{automovel.codigo}" itemLabel="#{automovel.modelo}"/>
+						</h:selectOneMenu> 	
+						</label>
+					</div>
+					
+					<div class="cell auto">
+						<label>Dia
+						<h:inputText value="#{vendaMBean.novo.dia}" />
+						</label>
+					</div>
+					<div class="cell auto">
+						<label>Valor
+						<h:inputText type="number" value="#{vendaMBean.novo.valor}" />
+						</label>
+					</div>
+					
+				</div>
+				<div class="grid-x grid-padding-x">
+				<div class="cell">
+				<h:commandButton class="button" value="Incluir" action="#{vendaMBean.incluirAction()}" />
+				<a class="button"  href="index.xhtml">Cancelar</a>
+				</div>
+				</div>
+			</div>
+
+		</h:form>
+
+
+	</ui:define>
+
+</ui:composition>
+</html>

@@ -8,9 +8,9 @@ public class Venda {
 	private String dia;
 	private int valor;
 	private int numVenda;
-	private Automovel Automovel;
-	private Vendedor Vendedor;
-	private Cliente Cliente;
+	private Automovel Automovel = new Automovel();
+	private Vendedor Vendedor = new Vendedor();
+	private Cliente Cliente = new Cliente();
 	
 	
 	public Automovel getAutomovel() {

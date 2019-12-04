@@ -98,7 +98,7 @@ public class AutomovelDAO {
 		try {
 			Connection con = AppConnection.getConnection();
 			PreparedStatement stmt = con.prepareStatement(
-					"SELECT codigo, modelo, fabricante, ano, cilindrada, tipo FROM Automovel where codigo = ? and codigo NOT IN (select codigo_Automovel from Venda)");
+					"SELECT codigo, modelo, fabricante, ano, cilindrada, tipo FROM Automovel where codigo = ?");
 			stmt.setInt(1, codigo);
 			  ResultSet rs = stmt.executeQuery();
 			  while (rs.next()) {
